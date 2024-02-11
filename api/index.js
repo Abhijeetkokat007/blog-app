@@ -1,23 +1,22 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
 import commentRoutes from './routes/comment.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config(); 
 
-dotenv.config();
-
-mongoose
-  .connect("mongodb+srv://abhijeetkokat2003:Abhijeet123@abhi.aq8u6iz.mongodb.net/my-blog-app")
-  .then(() => {
-    console.log('MongoDb is connected');
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// mongoose.connect(process.env.MONGOODB_URI)
+//   .then(() => {
+//     console.log('MongoDb is connected');
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 const __dirname = path.resolve();
 
@@ -26,9 +25,21 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.listen(4000, () => {
-  console.log('Server is running on port 4000!');
+app.listen(3000, () => {
+  console.log('Server is running on port 3000!');
+  connectDB()
 });
+
+const connectDB = async () => {
+  try{
+    const add = await mongoose.connect(process.env.MONGURI);
+    console.log(`MongoDB Connected`);
+  
+  }
+  catch(e){
+    console.log(e.message)
+  }
+  };
 
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
