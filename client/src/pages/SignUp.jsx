@@ -55,7 +55,7 @@ export default function SignUp() {
             or with Google.
           </p>
         </div>
-        right
+        
 
         <div className='flex-1'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
@@ -104,7 +104,7 @@ export default function SignUp() {
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Have an account?</span>
-            <Link to='/sign-in' className='text-blue-500'>
+            <Link to='/login' className='text-blue-500'>
               Sign In
             </Link>
           </div>
