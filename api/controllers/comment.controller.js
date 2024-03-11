@@ -4,11 +4,11 @@ export const createComment = async (req, res, next) => {
   try {
     const { content, postId, userId } = req.body;
 
-    if (userId !== req.user.id) {
-      return next(
-        errorHandler(403, 'You are not allowed to create this comment')
-      );
-    }
+    // if (userId !== req.user.id) {
+    //   return next(
+    //     errorHandler(403, 'You are not allowed to create this comment')
+    //   );
+    // }
 
     const newComment = new Comment({
       content,
@@ -61,11 +61,11 @@ export const editComment = async (req, res, next) => {
     if (!comment) {
       return next(errorHandler(404, 'Comment not found'));
     }
-    if (comment.userId !== req.user.id && !req.user.isAdmin) {
-      return next(
-        errorHandler(403, 'You are not allowed to edit this comment')
-      );
-    }
+    // if (comment.userId !== req.user.id && !req.user.isAdmin) {
+    //   return next(
+    //     errorHandler(403, 'You are not allowed to edit this comment')
+    //   );
+    // }
 
     const editedComment = await Comment.findByIdAndUpdate(
       req.params.commentId,
@@ -86,11 +86,11 @@ export const deleteComment = async (req, res, next) => {
     if (!comment) {
       return next(errorHandler(404, 'Comment not found'));
     }
-    if (comment.userId !== req.user.id && !req.user.isAdmin) {
-      return next(
-        errorHandler(403, 'You are not allowed to delete this comment')
-      );
-    }
+    // if (comment.userId !== req.user.id && !req.user.isAdmin) {
+    //   return next(
+    //     errorHandler(403, 'You are not allowed to delete this comment')
+    //   );
+    // }
     await Comment.findByIdAndDelete(req.params.commentId);
     res.status(200).json('Comment has been deleted');
   } catch (error) {
@@ -99,8 +99,8 @@ export const deleteComment = async (req, res, next) => {
 };
 
 export const getcomments = async (req, res, next) => {
-  if (!req.user.isAdmin)
-    return next(errorHandler(403, 'You are not allowed to get all comments'));
+  // if (!req.user.isAdmin)
+  //   return next(errorHandler(403, 'You are not allowed to get all comments'));
   try {
     const startIndex = parseInt(req.query.startIndex) || 0;
     const limit = parseInt(req.query.limit) || 9;
