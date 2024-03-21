@@ -24,7 +24,7 @@ export default function CallToAction() {
 
         </div>
         <div className="p-7 flex-1">
-            <img src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg" />
+            <img src="https://www.wallpapertip.com/wmimgs/160-1606533_how-to-become-a-full-stack-web-developer.jpg" />
         </div>
     </div>
   )
