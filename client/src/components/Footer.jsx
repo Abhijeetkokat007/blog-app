@@ -71,7 +71,7 @@ export default function FooterCom() {
             <Footer.Icon href='#' icon={BsInstagram}/>
             <Footer.Icon href='#' icon={BsTwitter}/>
             <Footer.Icon href='https://github.com/Abhijeetkokat007' icon={BsGithub}/>
-            <Footer.Icon href='#' icon={BsDribbble}/>
+            <Footer.Icon href='https://abhijeetkokat007-github-portfolio.netlify.app/' icon={BsDribbble}/>
 
           </div>
         </div>
