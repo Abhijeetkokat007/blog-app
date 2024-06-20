@@ -10,7 +10,7 @@ export default function CallToAction() {
             <p className='text-gray-500 my-2'>
                 Checkout these resources My Best JavaScript & React Projects
             </p>
-            <Button gradientDuoTone='purpleToPink'  className='rounded-tl-xl rounded-bl-none'>
+            <Button gradientDuoTone='purpleToPink'  className='rounded-tl-xl rounded-bl-none rounded-tr-none'>
                 <a href="https://github.com/Abhijeetkokat007?tab=repositories" target='_blank' rel='noopener noreferrer'>
                     My Best Projects
                 </a>
@@ -23,8 +23,8 @@ export default function CallToAction() {
             </Button> */}
 
         </div>
-        <div className="p-7 flex-1">
-            <img src="https://www.wallpapertip.com/wmimgs/160-1606533_how-to-become-a-full-stack-web-developer.jpg" />
+        <div className="p-7 flex-1 ">
+            <img className=' rounded-xl ' src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600" />
         </div>
     </div>
   )
