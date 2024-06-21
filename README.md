@@ -46,5 +46,5 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## License
 
-This project is licensed under the [ISC](LICENSE).
+This project is licensed under the [MIT LICENSE](https://github.com/Abhijeetkokat007/blog-app/blob/main/LICENSE).
 
